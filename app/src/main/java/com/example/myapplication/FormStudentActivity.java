@@ -36,10 +36,10 @@ public class FormStudentActivity extends AppCompatActivity {
         mBtnSubmit = findViewById(R.id.btnSubmit);
         mBtnCancel = findViewById(R.id.btnCancel);
         studentImpl = new StudentImpl(FormStudentActivity.this);
-        if (type == Constant.VIEW_STUDENT_REQUEST){
+        if (type == Constant.VIEW_STUDENT_REQUEST) {
             Student student = (Student) intent.getSerializableExtra("student");
             mEdtName.setText(student.getName());
-            mEdtAge.setText(student.getAge()+"");
+            mEdtAge.setText(student.getAge() + "");
             mEdtClass.setText(student.getRoomClass());
         }
         mBtnSubmit.setOnClickListener(new View.OnClickListener() {
@@ -53,16 +53,15 @@ public class FormStudentActivity extends AppCompatActivity {
                     roomClass = mEdtClass.getText().toString();
                     if (type == Constant.ADD_STUDENT_REQUEST) {
                         Student student = new Student(name, age, roomClass);
-                        Intent intent = new Intent();
-                        intent.putExtra("student", student);
+
                         boolean check = studentImpl.insertStudent(student);
-                        if(check){
+                        if (check) {
                             setResult(Activity.RESULT_OK, intent);
                             finish();
-                        }else {
+                        } else {
                             Toast.makeText(FormStudentActivity.this, "Insert student failed", Toast.LENGTH_SHORT).show();
                         }
-                    }else if (type == Constant.VIEW_STUDENT_REQUEST){
+                    } else if (type == Constant.VIEW_STUDENT_REQUEST) {
                         Student student = new Student();
                         student.setId(((Student) intent.getSerializableExtra("student")).getId());
                         student.setName(name);
@@ -72,8 +71,8 @@ public class FormStudentActivity extends AppCompatActivity {
                         Intent intent2 = new Intent();
                         intent2.putExtra("index", intent.getIntExtra("index", -1));
                         intent2.putExtra("student", student);
-                        Log.e("123", check+"");
-                        if (check){
+                        Log.e("123", check + "");
+                        if (check) {
                             setResult(Activity.RESULT_OK, intent2);
                             finish();
                         }

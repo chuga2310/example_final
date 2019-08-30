@@ -63,7 +63,8 @@ public class MainActivity extends AppCompatActivity {
         if(requestCode ==  Constant.ADD_STUDENT_REQUEST){
             if(resultCode == Activity.RESULT_OK){
                 assert data != null;
-                Student student = (Student) data.getSerializableExtra("student");
+                studentImpl = new StudentImpl(this);
+                Student student = studentImpl.getAllStudent().get(studentImpl.getAllStudent().size()-1);
                 listStudent.add(student);
                 adapter.notifyDataSetChanged();
             }
@@ -74,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
                 listStudent.get(index).setName(student.getName());
                 listStudent.get(index).setRoomClass(student.getRoomClass());
                 listStudent.get(index).setAge(student.getAge());
-                adapter.notifyItemChanged(index);
+                adapter.notifyDataSetChanged();
             }
         }
     }

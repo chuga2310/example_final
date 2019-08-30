@@ -65,7 +65,7 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.StudentV
                         Log.e("123",check+"");
                         if(check){
                             listStudent.remove(holder.getAdapterPosition());
-                            notifyItemRemoved(holder.getAdapterPosition());
+                           notifyDataSetChanged();
                         }
                         dialogInterface.dismiss();
                     }
@@ -74,7 +74,7 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.StudentV
                 return true;
             }
         });
-        int index = holder.getAdapterPosition();
+        int index = position;
         holder.mTvIndex.setText(index+1+"");
         holder.mTvName.setText(listStudent.get(index).getName());
         holder.mTvAge.setText(listStudent.get(index).getAge()+"");
