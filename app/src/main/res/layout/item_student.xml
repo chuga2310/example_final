@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:background="@android:color/holo_blue_dark"
+    android:id="@+id/item"
+    android:gravity="center"
+    android:layout_marginBottom="1dp"
+    android:layout_height="60dp">
+    <TextView
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
+        android:textAlignment="center"
+        android:id="@+id/tvIndex"/>
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textColor="#FFFFFF"
+        android:id="@+id/tvName"/>
+    <TextView
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
+        android:id="@+id/tvAge"/>
+    <TextView
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
+        android:id="@+id/tvRoomClass"/>
+</LinearLayout>

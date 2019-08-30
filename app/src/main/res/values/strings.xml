@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="add">Add</string>
+    <string name="name">Name</string>
+    <string name="age">Age</string>
+    <string name="room_class">Class</string>
+</resources>
